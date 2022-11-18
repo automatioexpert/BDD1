@@ -10,7 +10,6 @@ public class ProductStep extends BaseTest{
 	public ProductStep product;
 	
 
-
 	@Given("user is on the product page")
 	public void user_is_on_the_product_page() {
 
