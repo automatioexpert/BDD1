@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import Utils.Constant;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -12,17 +14,30 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import pages.LoginPage;
 
 public class LoginStep2 {
-	private WebDriver driver;
+	private WebDriver driver=null;
 	public LoginPage login;
+	
+	//Adding hooks for the setup and tear down
+	
+	@Before
+	public void setUp() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		login = new LoginPage(driver);
+		
+	}
+	
+	@After
+	public void tearDown() {
+		driver.quit();
+		
+	}
 
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
-
 		System.out.println("user_is_on_login_page");
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		login = new LoginPage(driver);
-		driver.manage().window().maximize();
 		driver.get(Constant.URL);
 	}
 
@@ -47,8 +62,6 @@ public class LoginStep2 {
 	public void user_is_navigated_to_login_page() {
 		System.out.println("user_is_navigated_to_login_page");
 		System.out.println(driver.getTitle());
-		driver.quit();
-		System.out.println("Test Passed");
 	}
 
 }
