@@ -1,8 +1,8 @@
 package steps;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import Utils.Constant;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
