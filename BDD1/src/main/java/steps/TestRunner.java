@@ -8,8 +8,11 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/features",glue = "steps",monochrome = true,
 
-plugin={"pretty","junit:target/htmlReport.xml"})
+plugin={"pretty","html:target/htmlReport.html"},tags = "@smoke")
 public class TestRunner {
+	
+	
+	
 	
 
 }
