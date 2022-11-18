@@ -1,21 +1,29 @@
 package steps;
 
+import base.BaseTest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class ProductStep {
+public class ProductStep extends BaseTest{
+
+	public ProductStep product;
 	
 
-	
+
 	@Given("user is on the product page")
 	public void user_is_on_the_product_page() {
+
+		System.out.println("user_is_on_the_product_page");
 		
 
 	}
 
 	@When("user select the product")
 	public void user_select_the_product() {
+	
+		
+		
 
 	}
 
