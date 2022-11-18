@@ -19,6 +19,9 @@ public class LoginStep2 {
 	
 	//Adding hooks for the setup and tear down
 	
+/**
+ * This is for doing the browser and other required setup
+ */
 	@Before
 	public void setUp() {
 		WebDriverManager.chromedriver().setup();
@@ -29,6 +32,9 @@ public class LoginStep2 {
 		
 	}
 	
+	/**
+	 * This is for closing the browser and other required connection/resources setup
+	 */
 	@After
 	public void tearDown() {
 		driver.quit();
